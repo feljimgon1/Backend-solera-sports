@@ -9,10 +9,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import solerasports.server.models.enums.UserType;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -26,14 +28,12 @@ public class User {
     private String email;
 
     @Column
-    @Size(min = 8)
+    //@Size(min = 8)
     @NotBlank
     @NotNull
     private String password;
 
     @Column
-    @NotBlank
-    @NotNull
     private UserType userType;
 
 }
